@@ -12,21 +12,21 @@ class ParrotTest extends \PHPUnit_Framework_TestCase{
   }
 
   /** @test */
-  public function get_speed_of_african_parrot_with_one_coconut() {
+  public function the_speed_of_african_parrot_with_no_coconuts_is_normal_speed() {
+    $parrot = new AfricanParrot(0);
+    $this->assertEquals(self::NORMAL_SPEED, $parrot->getSpeed());
+  }
+
+  /** @test */
+  public function the_speed_of_african_parrot_with_no_coconuts_is_reduced() {
     $parrot = new AfricanParrot(1);
     $this->assertEquals(3.0, $parrot->getSpeed());
   }
 
   /** @test */
-  public function get_speed_of_african_parrot_with_two_coconuts() {
+  public function the_african_parrot_cannot_carry_more_than_one_coconut() {
     $parrot = new AfricanParrot(2);
     $this->assertEquals(0.0, $parrot->getSpeed());
-  }
-
-  /** @test */
-  public function get_speed_of_african_parrot_with_no_coconuts() {
-    $parrot = new AfricanParrot(0);
-    $this->assertEquals(self::NORMAL_SPEED, $parrot->getSpeed());
   }
 
   /** @test */
