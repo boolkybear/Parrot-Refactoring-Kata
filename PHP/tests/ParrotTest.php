@@ -47,6 +47,7 @@ class ParrotTest extends \PHPUnit_Framework_TestCase{
   }
 
   private function parrot($type, $numberOfCoconuts, $voltage, $isNailed){
-    return new Parrot($type, $numberOfCoconuts, $voltage, $isNailed);
+    $factory = new ParrotFactory();
+    return $factory->build($type, $numberOfCoconuts, $voltage, $isNailed);
   }
 }
