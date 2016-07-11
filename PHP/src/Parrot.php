@@ -32,8 +32,6 @@ class Parrot {
    */
   public function getSpeed() {
     switch ($this->type) {
-      case ParrotTypeEnum::AFRICAN:
-        return max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts);
       case ParrotTypeEnum::NORWEGIAN_BLUE:
         return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
     }
@@ -44,11 +42,7 @@ class Parrot {
     return min(24.0, $voltage * $this->getBaseSpeed());
   }
 
-  private function getLoadFactor() {
-    return 9.0;
-  }
-
-  private function getBaseSpeed() {
+  protected function getBaseSpeed() {
     return 12.0;
   }
 
