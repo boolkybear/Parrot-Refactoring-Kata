@@ -30,13 +30,13 @@ class ParrotTest extends \PHPUnit_Framework_TestCase{
   }
 
   /** @test */
-  public function get_speed_norwegian_blue_parrot_nailed() {
+  public function the_nailed_norwegian_blue_parrot_cannot_move() {
     $parrot = new NailedNorwegianParrot();
     $this->assertEquals(0.0, $parrot->getSpeed());
   }
 
   /** @test */
-  public function get_speed_norwegian_blue_parrot_not_nailed() {
+  public function the_not_nailed_norwegian_blue_parrot_increase_with_the_voltage() {
     $parrot = new NotNailedNorwegianParrot(1.5);
     $this->assertEquals(18.0, $parrot->getSpeed());
   }
