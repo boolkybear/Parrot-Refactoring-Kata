@@ -10,7 +10,7 @@ class EuropeanParrot extends Parrot {
   }
 
   public function getSpeed() {
-    return 12.0;
+    return $this->getBaseSpeed();
   }
 
 }
