@@ -11,7 +11,9 @@ class ParrotFactory {
       case ParrotTypeEnum::AFRICAN:
         return new AfricanParrot($numberOfCoconuts);
       case ParrotTypeEnum::NORWEGIAN_BLUE:
-        return new NorwegianParrot($isNailed, $voltage);
+        return $isNailed
+          ? new NailedNorwegianParrot()
+          : new NotNailedNorwegianParrot($voltage);
     }
     return new Parrot($type, $numberOfCoconuts, $voltage, $isNailed);
   }
