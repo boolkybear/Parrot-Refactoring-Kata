@@ -15,6 +15,6 @@ class ParrotFactory {
           ? new NailedNorwegianParrot()
           : new NotNailedNorwegianParrot($voltage);
     }
-    return new Parrot($type, $numberOfCoconuts, $voltage, $isNailed);
+    throw new \Exception("There is no valid type");
   }
 }
