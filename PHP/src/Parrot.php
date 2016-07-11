@@ -2,7 +2,7 @@
 
 namespace Parrot;
 
-class Parrot {
+abstract class Parrot {
   /** @var int ParrotTypeEnum */
   private $type;
   /** @var int */
@@ -30,9 +30,7 @@ class Parrot {
    * @return float
    * @throws \Exception
    */
-  public function getSpeed() {
-    throw new \Exception("Should be unreachable");
-  }
+  abstract public function getSpeed();
 
   protected function getBaseSpeed() {
     return 12.0;

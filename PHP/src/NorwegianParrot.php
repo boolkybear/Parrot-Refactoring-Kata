@@ -2,5 +2,5 @@
 
 namespace Parrot;
 
-class NorwegianParrot extends Parrot {
+abstract class NorwegianParrot extends Parrot {
 }
