@@ -2,7 +2,7 @@
 
 namespace Parrot;
 
-class ParrotTest extends \PHPUnit_Framework_TestCase{
+class ParrotTest extends \PHPUnit_Framework_TestCase {
   const NORMAL_SPEED = 12.0;
 
   /** @test */
@@ -35,15 +35,20 @@ class ParrotTest extends \PHPUnit_Framework_TestCase{
     $this->assertEquals(0.0, $parrot->getSpeed());
   }
 
-  /** @test */
-  public function the_not_nailed_norwegian_blue_parrot_increase_with_the_voltage() {
-    $parrot = new NotNailedNorwegianParrot(1.5);
-    $this->assertEquals(18.0, $parrot->getSpeed());
+  /**
+   * @dataProvider notNailedNorwegianParrots
+   * @test
+   */
+  public function the_not_nailed_norwegian_blue_parrot_increase_with_the_voltage($voltage, $expectedSpeed) {
+    $parrot = new NotNailedNorwegianParrot($voltage);
+    $this->assertEquals($expectedSpeed, $parrot->getSpeed());
   }
 
-  /** @test */
-  public function get_speed_norwegian_blue_parrot_not_nailed_high_voltage() {
-    $parrot = new NotNailedNorwegianParrot(4);
-    $this->assertEquals(24.0, $parrot->getSpeed());
+  public function notNailedNorwegianParrots() {
+    return [
+      [1.5, 18.0],
+      [4, 24.0]
+    ];
   }
+
 }
