@@ -3,11 +3,12 @@
 namespace Parrot;
 
 class ParrotTest extends \PHPUnit_Framework_TestCase{
+  const NORMAL_SPEED = 12.0;
 
   /** @test */
-  public function get_speed_of_european_parrot() {
+  public function the_speed_of_european_parrot_is_normal_speed() {
     $parrot = new EuropeanParrot();
-    $this->assertEquals(12.0, $parrot->getSpeed());
+    $this->assertEquals(self::NORMAL_SPEED, $parrot->getSpeed());
   }
 
   /** @test */
@@ -25,7 +26,7 @@ class ParrotTest extends \PHPUnit_Framework_TestCase{
   /** @test */
   public function get_speed_of_african_parrot_with_no_coconuts() {
     $parrot = new AfricanParrot(0);
-    $this->assertEquals(12.0, $parrot->getSpeed());
+    $this->assertEquals(self::NORMAL_SPEED, $parrot->getSpeed());
   }
 
   /** @test */
