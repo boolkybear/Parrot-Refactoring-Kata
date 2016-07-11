@@ -31,15 +31,7 @@ class Parrot {
    * @throws \Exception
    */
   public function getSpeed() {
-    switch ($this->type) {
-      case ParrotTypeEnum::NORWEGIAN_BLUE:
-        return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
-    }
     throw new \Exception("Should be unreachable");
-  }
-
-  private function getBaseSpeedWith($voltage) {
-    return min(24.0, $voltage * $this->getBaseSpeed());
   }
 
   protected function getBaseSpeed() {
